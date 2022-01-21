@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block title %}{{ object.text }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-10 offset-sm-1 pt-5">
+
+            
+            <button type="button" class="btn btn-secondary"><a href="{% url 'feed:index' %}" style="text-decoration: none; color: white;">&larr; Go back</a></button>
+            {% comment %} <h3>Text</h3> {% endcomment %}
+            <h1 class="my-4">{{ object.text }}</h1>
+            {% comment %} <h3>Image</h3> {% endcomment %}
+            <img src="{{ object.image.url }}" style='width: 100%; height: auto;' class="image-fluid rounded mb-5">
+        </div>
+    </div>
+{% endblock %}
